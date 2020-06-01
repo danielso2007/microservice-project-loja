@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: '${PROJECT_PROFILE:@spring.profiles.active@}'
+  application:
+    name: '@project.artifactId@'
+server:
+  port: '${EUREKA_PORT:@eureka.port@}'
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false 
+logging:
+    level:
+        com:
+            netflix:
+                eureka: OFF
+                discovery: OFF
+        org:
+            springframework: warn
+            xnio: warn
+            jboss: warn
+debug: '${DEBUG:@debug.properties@}'
+trace: '${TRACE:@trace.properties@}'

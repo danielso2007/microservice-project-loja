@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: native
+  cloud:
+    config:
+      # TAMBÉM É POSSÍVEL OBTER A CONFIGURAÇÃO DO GIT, VERIFICAR A DOCUMENTAÇÃO.
+      server:
+        native:
+          search-locations: '${HOME}/desenv/microservice_project/microservice-config'
+  application:
+    name: '@project.artifactId@'
+server:
+  port: '${EUREKA_PORT:@config-server.port@}'
+logging:
+    level:
+        com:
+            netflix:
+                eureka: OFF
+                discovery: OFF
+        org:
+            springframework: warn
+            xnio: warn
+            jboss: warn
+debug: '${DEBUG:@debug.properties@}'
+trace: '${TRACE:@trace.properties@}'

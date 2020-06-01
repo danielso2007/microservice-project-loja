@@ -1,0 +1,68 @@
+spring:
+  profiles:
+    active: '${PROJECT_PROFILE:@spring.profiles.active@}'
+  jackson:
+    date-format: 'yyyy-MM-dd HH:mm:ss'
+    default-property-inclusion: NON_NULL
+    locale: pt-BR
+    time-zone: America/Sao_Paulo
+feign:
+  hystrix:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: '${EUREKA_HOST:@eureka.localhost@}'
+debug: '${DEBUG:@debug.properties@}'
+trace: '${TRACE:@trace.properties@}'
+server:
+  compression:
+    enabled: true
+    min-response-size: 1
+  port: '${SERVER_PORT:@loja.port@}'
+  undertow:
+    accesslog:
+      dir: logs
+      enabled: false
+      pattern: '%t %a "%r" %s (%D ms)'
+logging:
+  level:
+    org:
+      springframework: warn
+      hibernate: warn
+      xnio: warn
+      jboss: warn
+    io:
+      undertow: warn
+    com:
+      zaxxer:
+        hikari:
+          HikariDataSource: warn
+# Actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+info:
+  app:
+    name: '@project.artifactId@'
+    description: '@project.description@'
+    version: '@project.version@'
+    encoding: '@project.build.sourceEncoding@'
+    java:
+      version: '@java.version@'
+  

@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      uri: '@config-server.host@'
+  application:
+    name: '@project.artifactId@'

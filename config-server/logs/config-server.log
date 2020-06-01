@@ -1,0 +1,28 @@
+2020-06-01 00:31:13 INFO  b.c.m.p.c.s.ConfigServerApplication - The following profiles are active: native
+2020-06-01 00:31:14 INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2020-06-01 00:31:14 DEBUG i.m.c.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+2020-06-01 00:31:15 INFO  io.undertow - starting server: Undertow - 2.1.0.Final
+2020-06-01 00:31:15 INFO  b.c.m.p.c.s.ConfigServerApplication - Started ConfigServerApplication in 2.943 seconds (JVM running for 3.786)
+2020-06-01 00:32:39 INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-01 00:36:45 INFO  io.undertow - stopping server: Undertow - 2.1.0.Final
+2020-06-01 00:36:45 INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-06-01 00:39:52 INFO  b.c.m.p.c.s.ConfigServerApplication - The following profiles are active: native
+2020-06-01 00:39:53 INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2020-06-01 00:39:53 DEBUG i.m.c.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+2020-06-01 00:39:55 INFO  io.undertow - starting server: Undertow - 2.1.0.Final
+2020-06-01 00:39:55 INFO  b.c.m.p.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.904 seconds (JVM running for 4.782)
+2020-06-01 00:39:57 INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-01 00:48:02 INFO  io.undertow - stopping server: Undertow - 2.1.0.Final
+2020-06-01 00:48:02 INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-06-01 00:48:05 INFO  b.c.m.p.c.s.ConfigServerApplication - The following profiles are active: native
+2020-06-01 00:48:06 INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2020-06-01 00:48:08 INFO  io.undertow - starting server: Undertow - 2.1.0.Final
+2020-06-01 00:48:08 INFO  b.c.m.p.c.s.ConfigServerApplication - Started ConfigServerApplication in 4.35 seconds (JVM running for 5.297)
+2020-06-01 00:48:10 INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-01 00:51:21 INFO  io.undertow - stopping server: Undertow - 2.1.0.Final
+2020-06-01 00:51:22 INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2020-06-01 00:57:28 INFO  b.c.m.p.c.s.ConfigServerApplication - The following profiles are active: native
+2020-06-01 00:57:29 INFO  io.undertow.servlet - Initializing Spring embedded WebApplicationContext
+2020-06-01 00:57:30 INFO  io.undertow - starting server: Undertow - 2.1.0.Final
+2020-06-01 00:57:30 INFO  b.c.m.p.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.471 seconds (JVM running for 4.315)
+2020-06-01 00:57:32 INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'

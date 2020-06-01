@@ -1,0 +1,37 @@
+{
+  "name": "microservice-project",
+  "version": "0.0.1",
+  "description": "Projeto micro serviços.",
+  "scripts": {
+    "release": "standard-version",
+    "test": "mvn -q test -P test"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "node set-pom-version.js",
+      "postcommit": "git add pom.xml && git commit --amend --no-edit"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielso2007/microservice-project.git"
+  },
+  "keywords": [
+    "microservice",
+    "API",
+    "REST",
+    "Java",
+    "Spring",
+    "SpringBoot",
+    "Test"
+  ],
+  "author": "Daniel Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielso2007/microservice-project/issues"
+  },
+  "homepage": "https://github.com/danielso2007/microservice-project#readme",
+  "devDependencies": {
+    "standard-version": "^8.0.0"
+  }
+}
