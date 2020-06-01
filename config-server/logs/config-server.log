@@ -26,3 +26,5 @@
 2020-06-01 00:57:30 INFO  io.undertow - starting server: Undertow - 2.1.0.Final
 2020-06-01 00:57:30 INFO  b.c.m.p.c.s.ConfigServerApplication - Started ConfigServerApplication in 3.471 seconds (JVM running for 4.315)
 2020-06-01 00:57:32 INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-01 01:11:14 INFO  io.undertow - stopping server: Undertow - 2.1.0.Final
+2020-06-01 01:11:14 INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'

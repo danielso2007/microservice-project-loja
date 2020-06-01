@@ -60,3 +60,5 @@
 2020-06-01 00:57:34 INFO  io.undertow - starting server: Undertow - 2.1.0.Final
 2020-06-01 00:57:34 INFO  b.c.m.p.e.EurekaServerApplication - Started EurekaServerApplication in 4.715 seconds (JVM running for 5.674)
 2020-06-01 00:57:48 INFO  io.undertow.servlet - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-01 01:11:14 INFO  io.undertow - stopping server: Undertow - 2.1.0.Final
+2020-06-01 01:11:14 INFO  io.undertow.servlet - Destroying Spring FrameworkServlet 'dispatcherServlet'
