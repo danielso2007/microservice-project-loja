@@ -9,4 +9,6 @@ public interface ICompraService {
 
 	Compra save(Compra compra);
 
+	Compra getById(Long id);
+
 }

@@ -25,7 +25,7 @@ public class FornecedorController implements IFornecedorController {
 	@Autowired
 	private IFornecedorService service;
 
-	@HystrixCommand(fallbackMethod = "infoFallback")
+	@HystrixCommand(fallbackMethod = "infoFallback", threadPoolKey = "infoThreadPool")
 	@Override
 	public @ResponseBody ResponseEntity<List<InfoFornecedorDTO>> info(@PathVariable(required = true) String estado) {
 		try {

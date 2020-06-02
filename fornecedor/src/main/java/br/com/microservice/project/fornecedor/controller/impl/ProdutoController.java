@@ -25,7 +25,7 @@ public class ProdutoController implements IProdutoController {
 	@Autowired
 	private ProdutoService produtoService;
 	
-	@HystrixCommand(fallbackMethod = "getProdutosPorEstadoFallback")
+	@HystrixCommand(fallbackMethod = "getProdutosPorEstadoFallback", threadPoolKey = "getProdutosPorEstadoThreadPool")
 	@Override
 	public ResponseEntity<List<Produto>> getProdutosPorEstado(@PathVariable(required = true) String estado) {
 		try {

@@ -1,6 +1,9 @@
 package br.com.microservice.project.loja.service.impl;
 
 import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.EntityNotFoundException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -74,6 +77,15 @@ public class CompraService implements ICompraService {
 		compra = compraRepository.save(compra);
 		LOG.info("Compra salva.");
 		return compra;
+	}
+
+	@Override
+	public Compra getById(Long id) {
+		Optional<Compra> opt = compraRepository.findById(id);
+		if (opt.isEmpty()) {
+			throw new EntityNotFoundException();
+		}
+		return opt.get();
 	}
 
 }
