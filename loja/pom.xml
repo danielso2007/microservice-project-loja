@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -101,9 +99,7 @@
 		<!-- Fallback e Circuit Breaker -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>
-				spring-cloud-starter-netflix-hystrix
-			</artifactId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 		</dependency>
 
 		<dependency>
@@ -115,6 +111,34 @@
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-jdbc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
 		</dependency>
 
 		<!-- Dependencias adicionadas devido ao Java 11 -->
@@ -153,4 +177,46 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<profiles>
+		<profile>
+			<id>test</id>
+			<properties>
+				<debug.properties>false</debug.properties>
+				<trace.properties>false</trace.properties>
+				<spring.profiles.active>test</spring.profiles.active>
+				<initialization-mode>never</initialization-mode>
+				<db.name>loja-${spring.profiles.active}</db.name>
+				<db.show_sql>true</db.show_sql>
+				<db.ddl-auto>none</db.ddl-auto>
+				<skip-tests>false</skip-tests>
+			</properties>
+		</profile>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<initialization-mode>never</initialization-mode>
+				<db.name>loja-${spring.profiles.active}</db.name>
+				<db.show_sql>true</db.show_sql>
+				<db.ddl-auto>none</db.ddl-auto>
+				<skip-tests>true</skip-tests>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<debug.properties>false</debug.properties>
+				<trace.properties>false</trace.properties>
+				<spring.profiles.active>prod</spring.profiles.active>
+				<initialization-mode>never</initialization-mode>
+				<db.name>loja</db.name>
+				<db.show_sql>false</db.show_sql>
+				<db.ddl-auto>none</db.ddl-auto>
+				<skip-tests>true</skip-tests>
+			</properties>
+		</profile>
+	</profiles>
 </project>

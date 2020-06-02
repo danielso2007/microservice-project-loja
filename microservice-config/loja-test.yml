@@ -1,6 +1,12 @@
 spring:
   profiles:
     active: test
+  datasource:
+    platform: mariadb
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/loja-test
+    username: root
+    password: root
 debug: false
 trace: false
 

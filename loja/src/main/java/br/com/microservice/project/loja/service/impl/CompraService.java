@@ -8,14 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.microservice.project.loja.dto.CompraDTO;
 import br.com.microservice.project.loja.entity.Compra;
 import br.com.microservice.project.loja.feign.IFornecedorController;
 import br.com.microservice.project.loja.feign.dto.InfoFornecedorDTO;
 import br.com.microservice.project.loja.feign.dto.InfoPedidoDTO;
+import br.com.microservice.project.loja.repository.CompraRepository;
 import br.com.microservice.project.loja.service.ICompraService;
 
+@Transactional(readOnly = true)
 @Service
 public class CompraService implements ICompraService {
 
@@ -23,6 +26,9 @@ public class CompraService implements ICompraService {
 	
 	@Autowired
 	private IFornecedorController fornecedorController;
+	
+	@Autowired
+	private CompraRepository compraRepository;
 
 	@Autowired
 	private DiscoveryClient discoveryClient;
@@ -43,15 +49,31 @@ public class CompraService implements ICompraService {
 			System.out.println(obj);
 		}
 		
-		InfoPedidoDTO infoPedidoDTO = fornecedorController.realizaPedido(compraDTO.getItens());
+		InfoPedidoDTO infoPedidoDTO = fornecedorController.realizaPedido(compraDTO.getItens()).getBody();
+
+		return salvarPedido(infoPedidoDTO, compraDTO);
+	}
+	
+	private Compra salvarPedido(InfoPedidoDTO infoPedidoDTO, CompraDTO compraDTO) {
 		Compra compraSalva = new Compra();
 		compraSalva.setPedidoId(infoPedidoDTO.getId());
 		compraSalva.setTempoDePreparo(infoPedidoDTO.getTempoDePreparo());
 		compraSalva.setEnderecoDestino(compraDTO.getEndereco().toString());
 		
+		compraSalva = save(compraSalva);
+		
 		LOG.info("Pedido finalizado.");
 		
 		return compraSalva;
+	}
+	
+	@Transactional(readOnly = false)
+	@Override
+	public Compra save(Compra compra) {
+		LOG.info("Salvando compra...");
+		compra = compraRepository.save(compra);
+		LOG.info("Compra salva.");
+		return compra;
 	}
 
 }

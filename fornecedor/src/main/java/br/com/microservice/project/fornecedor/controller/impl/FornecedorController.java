@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import br.com.microservice.project.fornecedor.controller.IFornecedorController;
 import br.com.microservice.project.fornecedor.dto.InfoFornecedorDTO;
 import br.com.microservice.project.fornecedor.lang.Constants;
@@ -23,9 +25,19 @@ public class FornecedorController implements IFornecedorController {
 	@Autowired
 	private IFornecedorService service;
 
+	@HystrixCommand(fallbackMethod = "infoFallback")
 	@Override
 	public @ResponseBody ResponseEntity<List<InfoFornecedorDTO>> info(@PathVariable(required = true) String estado) {
-		return ResponseEntity.ok(InfoFornecedorDTO.converter(service.getInfoPorEstado(estado)));
+		try {
+			return ResponseEntity.ok(InfoFornecedorDTO.converter(service.getInfoPorEstado(estado)));
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().build();
+		}
+	}
+	
+	public @ResponseBody ResponseEntity<List<InfoFornecedorDTO>> infoFallback(@PathVariable(required = true) String estado) {
+		// TODO: Apenas estudo.
+		return ResponseEntity.ok().build();
 	}
 
 }

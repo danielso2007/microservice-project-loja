@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS compra;
+CREATE TABLE `compra` (`id` bigint(20) NOT NULL AUTO_INCREMENT, `endereco_destino` varchar(500) NOT NULL, `pedido_id` bigint(20) NOT NULL, `tempo_de_preparo` int(11) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;

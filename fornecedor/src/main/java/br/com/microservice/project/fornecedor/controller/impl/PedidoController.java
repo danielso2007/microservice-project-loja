@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,15 +34,23 @@ public class PedidoController implements IPedidoController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping
 	@Override
-	public @ResponseBody Pedido realizaPedido(@RequestBody @Valid List<ItemDoPedidoDTO> produtos) {
-		return pedidoService.realizaPedido(produtos);
+	public @ResponseBody ResponseEntity<Pedido> realizaPedido(@RequestBody @Valid List<ItemDoPedidoDTO> produtos) {
+		try {
+			return ResponseEntity.ok(pedidoService.realizaPedido(produtos));
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().build();
+		}
 	}
 	
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping(value = "/{id}")
 	@Override
-	public @ResponseBody Pedido getPedidoPorId(@PathVariable(required = true) Long id) {
-		return pedidoService.getPedidoPorId(id);
+	public @ResponseBody ResponseEntity<Pedido> getPedidoPorId(@PathVariable(required = true) Long id) {
+		try {
+			return ResponseEntity.ok(pedidoService.getPedidoPorId(id));
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().build();
+		}
 	}
 	
 }

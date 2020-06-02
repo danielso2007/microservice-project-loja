@@ -7,4 +7,6 @@ public interface ICompraService {
 
 	Compra realizarCompra(CompraDTO compraDTO);
 
+	Compra save(Compra compra);
+
 }

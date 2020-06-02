@@ -28,10 +28,10 @@ public interface IFornecedorController {
 	
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping(value = "api/v1/pedido")
-	@ResponseBody InfoPedidoDTO realizaPedido(@RequestBody @Valid List<ItemDaCompraDTO> produtos);
+	@ResponseBody ResponseEntity<InfoPedidoDTO> realizaPedido(@RequestBody @Valid List<ItemDaCompraDTO> produtos);
 	
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping(value = "api/v1/pedido/{id}")
-	@ResponseBody InfoPedidoDTO getPedidoPorId(@PathVariable(required = true) Long id);
+	@ResponseBody ResponseEntity<InfoPedidoDTO> getPedidoPorId(@PathVariable(required = true) Long id);
 
 }

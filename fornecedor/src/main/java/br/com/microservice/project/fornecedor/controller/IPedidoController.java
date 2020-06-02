@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,10 +20,10 @@ public interface IPedidoController {
 
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping
-	@ResponseBody Pedido realizaPedido(@RequestBody @Valid List<ItemDoPedidoDTO> produtos);
+	@ResponseBody ResponseEntity<Pedido> realizaPedido(@RequestBody @Valid List<ItemDoPedidoDTO> produtos);
 	
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping(value = "/{id}")
-	@ResponseBody Pedido getPedidoPorId(@PathVariable(required = true) Long id);
+	@ResponseBody ResponseEntity<Pedido> getPedidoPorId(@PathVariable(required = true) Long id);
 
 }

@@ -33,7 +33,12 @@ public class CompreController implements ICompreController {
 	@Override
 	public ResponseEntity<Compra> realizaCompra(@RequestBody @Valid CompraDTO compra) {
 		LOG.info("Realizando compra...");
-		return ResponseEntity.ok(service.realizarCompra(compra));
+		try {
+			return ResponseEntity.ok(service.realizarCompra(compra));
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+			return ResponseEntity.badRequest().build();
+		}
 	}
 	
 	public ResponseEntity<Compra> realizaCompraFallback(@RequestBody @Valid CompraDTO compra) {
