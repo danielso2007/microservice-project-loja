@@ -1,6 +1,6 @@
 {
   "name": "microservice-project",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Projeto micro serviços.",
   "scripts": {
     "release": "standard-version",
@@ -9,7 +9,7 @@
   "standard-version": {
     "scripts": {
       "postbump": "node set-pom-version.js",
-      "postcommit": "git add pom.xml && git commit --amend --no-edit"
+      "postcommit": "git add pom.xml config-server/pom.xml eureka-server/pom.xml fornecedor/pom.xml loja/pom.xml && git commit --amend --no-edit"
     }
   },
   "repository": {

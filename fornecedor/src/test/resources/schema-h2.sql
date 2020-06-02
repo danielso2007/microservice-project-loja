@@ -1,2 +1,0 @@
-DROP TABLE IF EXISTS fornecedor.fornecedor;
-CREATE TABLE `fornecedor` (`id` bigint(20) NOT NULL AUTO_INCREMENT, `endereco` varchar(500) NOT NULL, `estado` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=latin1;
