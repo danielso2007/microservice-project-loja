@@ -49,6 +49,7 @@
 		<!-- Microservice ports -->
 		<fornecedor.port>8081</fornecedor.port>
 		<loja.port>8080</loja.port>
+		<transportador.port>8082</transportador.port>
 
 		<!-- Config server -->
 		<config-server.port>8888</config-server.port>
@@ -70,9 +71,11 @@
 	</properties>
 
 	<modules>
+		<module>config-server</module>
 		<module>eureka-server</module>
 		<module>loja</module>
 		<module>fornecedor</module>
+		<module>transportador</module>
 	</modules>
 
 	<dependencyManagement>

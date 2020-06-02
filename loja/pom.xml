@@ -185,7 +185,7 @@
 				<debug.properties>false</debug.properties>
 				<trace.properties>false</trace.properties>
 				<spring.profiles.active>test</spring.profiles.active>
-				<initialization-mode>never</initialization-mode>
+				<initialization-mode>always</initialization-mode>
 				<db.name>loja-${spring.profiles.active}</db.name>
 				<db.show_sql>true</db.show_sql>
 				<db.ddl-auto>none</db.ddl-auto>
@@ -198,7 +198,8 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<initialization-mode>never</initialization-mode>
+				<spring.profiles.active>dev</spring.profiles.active>
+				<initialization-mode>always</initialization-mode>
 				<db.name>loja-${spring.profiles.active}</db.name>
 				<db.show_sql>true</db.show_sql>
 				<db.ddl-auto>none</db.ddl-auto>

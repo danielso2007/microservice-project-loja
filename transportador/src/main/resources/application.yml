@@ -1,0 +1,88 @@
+spring:
+  profiles:
+    active: "${PROJECT_PROFILE:@spring.profiles.active@}"
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    default-property-inclusion: NON_NULL
+    locale: pt-BR
+    time-zone: America/Sao_Paulo
+  datasource:
+    initialization-mode: '@initialization-mode@'
+    platform: '@platform.name@'
+    driverClassName: '@driver-class-name@'
+    url: '${DB_URL:@db.url@}'
+    username: '${DB_USER:@db.username@}'
+    password: '${DB_PASSWORD:@db.password@}'
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 600000
+      maxLifetime: 1800000
+      maximum-pool-size: 50
+      minimum-idle: 1
+  jpa:
+    database-platform: '@db.database-platform@'
+    generate-ddl: false
+    open-in-view: true
+    show_sql: '${HOW_SQL:@db.show_sql@}'
+    hibernate:
+      ddl-auto: '@db.ddl-auto@'
+feign:
+  hystrix:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: "${EUREKA_HOST:@eureka.localhost@}"
+debug: "${DEBUG:@debug.properties@}"
+trace: "${TRACE:@trace.properties@}"
+server:
+  compression:
+    enabled: true
+    min-response-size: 1
+  port: "${SERVER_PORT:@transportador.port@}"
+  undertow:
+    accesslog:
+      dir: logs
+      enabled: false
+      pattern: '%t %a "%r" %s (%D ms)'
+logging:
+  level:
+    org:
+      springframework: warn
+      hibernate: warn
+      xnio: warn
+      jboss: warn
+    io:
+      undertow: warn
+    com:
+      zaxxer:
+        hikari:
+          HikariDataSource: warn
+# Actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: "@project.artifactId@"
+    description: "@project.description@"
+    version: "@project.version@"
+    encoding: "@project.build.sourceEncoding@"
+    java:
+      version: "@java.version@"
