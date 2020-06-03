@@ -3,41 +3,6 @@ spring:
     name: '@project.artifactId@'
   profiles:
     active: "${PROJECT_PROFILE:@spring.profiles.active@}"
-  jackson:
-    date-format: "yyyy-MM-dd HH:mm:ss"
-    default-property-inclusion: NON_NULL
-    locale: pt-BR
-    time-zone: America/Sao_Paulo
-  datasource:
-    initialization-mode: '@initialization-mode@'
-    platform: '@platform.name@'
-    driverClassName: '@driver-class-name@'
-    url: '${DB_URL:@db.url@}'
-    username: '${DB_USER:@db.username@}'
-    password: '${DB_PASSWORD:@db.password@}'
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      connectionTimeout: 30000
-      idleTimeout: 600000
-      maxLifetime: 1800000
-      maximum-pool-size: 50
-      minimum-idle: 1
-  jpa:
-    database-platform: '@db.database-platform@'
-    generate-ddl: false
-    open-in-view: true
-    show_sql: '${HOW_SQL:@db.show_sql@}'
-    hibernate:
-      ddl-auto: '@db.ddl-auto@'
-feign:
-  hystrix:
-    enabled: false
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: basic
 eureka:
   client:
     register-with-eureka: true
@@ -52,7 +17,7 @@ server:
   compression:
     enabled: true
     min-response-size: 1
-  port: "${SERVER_PORT:@loja.port@}"
+  port: "${SERVER_PORT:@gateway.port@}"
   undertow:
     accesslog:
       dir: logs

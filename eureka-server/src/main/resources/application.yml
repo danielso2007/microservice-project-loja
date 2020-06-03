@@ -1,8 +1,8 @@
 spring:
-  profiles:
-    active: '${PROJECT_PROFILE:@spring.profiles.active@}'
   application:
     name: '@project.artifactId@'
+  profiles:
+    active: '${PROJECT_PROFILE:@spring.profiles.active@}'
 server:
   port: '${EUREKA_PORT:@eureka.port@}'
 eureka:
