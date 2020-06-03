@@ -10,6 +10,14 @@ All notable changes to this project will be documented in this file. See [standa
 * Atualização dos testes do Postman. ([b49ef20](https://github.com/danielso2007/microservice-project/commit/b49ef20de280e4b4a53d1908a4f5639c66136dc2))
 * Autenticação e autorização. ([eaf06a4](https://github.com/danielso2007/microservice-project/commit/eaf06a417382f1f261ac0d6d1a4cc0f346d51288))
 
+## [1.2.0](https://github.com/danielso2007/microservice-project/compare/v1.1.0...v1.2.0) (2020-06-03)
+
+
+### Features
+
+* Atualização dos testes do Postman. ([b49ef20](https://github.com/danielso2007/microservice-project/commit/b49ef20de280e4b4a53d1908a4f5639c66136dc2))
+* Autenticação e autorização. ([eaf06a4](https://github.com/danielso2007/microservice-project/commit/eaf06a417382f1f261ac0d6d1a4cc0f346d51288))
+
 ## [1.1.0](https://github.com/danielso2007/microservice-project/compare/v1.0.0...v1.1.0) (2020-06-03)
 
 
