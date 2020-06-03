@@ -14,7 +14,7 @@
 	<groupId>br.com.microservice.project.eureka</groupId>
 	<artifactId>eureka-server</artifactId>
 	<name>eureka-server</name>
-	<description>Eureka Service</description>
+	<description>Responsável por registar as aplicações através de apelidos, o que torna todo roteamento dinâmico.</description>
 
 	<dependencies>
 		<dependency>

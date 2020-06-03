@@ -3,7 +3,9 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-
+logs/**
+./logs/**
+logs/*.log
 ### STS ###
 .apt_generated
 .classpath
@@ -12,13 +14,16 @@ target/
 .settings
 .springBeans
 .sts4-cache
+/node_module
+/node_modules/**
+/node_modules/.bin/**
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-
+*-lock.json
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
