@@ -304,3 +304,115 @@ Caused by: java.net.BindException: Endereço já em uso
 2020-06-02 20:36:52 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRANSPORTADOR/192.168.0.16:transportador:8082: registering service...
 2020-06-02 20:36:52 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRANSPORTADOR/192.168.0.16:transportador:8082 - registration status: 204
 2020-06-02 20:36:53 INFO  b.c.m.p.t.TransportadorApplication - Started TransportadorApplication in 7.101 seconds (JVM running for 7.968)
+2020-06-02 20:41:52 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 20:46:52 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 20:51:52 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 20:56:52 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:01:52 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:05:04 INFO  b.c.m.p.t.TransportadorApplication - The following profiles are active: default
+2020-06-02 21:05:05 WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-06-02 21:05:05 WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'hystrix.stream' contains invalid characters, please migrate to a valid format.
+2020-06-02 21:05:06 WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-02 21:05:06 INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-02 21:05:06 INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1884e671
+2020-06-02 21:05:08 WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-06-02 21:05:08 INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-06-02 21:05:09 WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2020-06-02 21:05:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2020-06-02 21:05:10 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1591142710360 with initial instances count: 2
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1591142710375, current=UP, previous=STARTING]
+2020-06-02 21:05:10 WARN  c.n.discovery.InstanceInfoReplicator - Ignoring onDemand update due to rate limiter
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRANSPORTADOR/192.168.0.16:transportador:8082: registering service...
+2020-06-02 21:05:10 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRANSPORTADOR/192.168.0.16:transportador:8082 - registration status: 204
+2020-06-02 21:05:10 INFO  b.c.m.p.t.TransportadorApplication - Started TransportadorApplication in 7.45 seconds (JVM running for 8.333)
+2020-06-02 21:10:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:15:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:16:17 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:16:17 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:16:17 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:16:24 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:16:24 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:16:24 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:16:40 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:16:40 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:16:40 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:20:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:25:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:30:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:35:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:40:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:45:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:45:10 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:45:10 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:45:10 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:47:56 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:47:56 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:47:56 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:49:06 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:49:06 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:49:06 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:49:25 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:49:25 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:49:25 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:50:01 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:50:01 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:50:01 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:50:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:50:18 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:50:18 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:50:18 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 21:55:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 21:58:42 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 21:58:42 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 21:58:42 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 22:00:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:05:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:07:21 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 22:07:21 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 22:07:21 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 22:08:15 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 22:08:15 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 22:08:15 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 22:10:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:15:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:20:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:25:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:30:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:35:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:40:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:45:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:50:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 22:55:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:00:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:05:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:10:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:15:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:20:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:25:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:30:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:35:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:37:10 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 23:37:10 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 23:37:10 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 23:39:49 INFO  b.c.m.p.t.service.EntregaService - Reserva de entrega...
+2020-06-02 23:39:49 INFO  b.c.m.p.t.service.EntregaService - Salvando entrega.
+2020-06-02 23:39:49 INFO  b.c.m.p.t.service.EntregaService - Retornando voucher.
+2020-06-02 23:40:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:45:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:50:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-02 23:55:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-03 00:00:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-03 00:05:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-03 00:10:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-06-03 00:15:10 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

@@ -56,6 +56,10 @@ public class EnderecoDTO implements Serializable {
 		return Objects.hash(estado, numero, rua);
 	}
 
+	public String enderecoCompleto() {
+		return String.format("%s, %s, %s", getRua(), getNumero(), getEstado());
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {

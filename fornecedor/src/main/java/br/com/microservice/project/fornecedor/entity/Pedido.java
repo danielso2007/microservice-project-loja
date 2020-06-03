@@ -23,7 +23,7 @@ public class Pedido implements Serializable {
 	private Long id;
 
 	private Integer tempoDePreparo;
-
+	
 	@Enumerated(EnumType.STRING)
 	private PedidoStatus status;
 

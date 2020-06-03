@@ -1,18 +1,17 @@
 package br.com.microservice.project.loja.entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Compra implements Serializable {
@@ -22,18 +21,20 @@ public class Compra implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@NotNull(message = "O número do pedido não pode ser nulo")
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private Long pedidoId;
-	@NotNull(message = "O tempo de preparo não pode ser nulo")
-	@Min(value = 1, message = "O tempo de preparo é no mínimo 1")
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private Integer tempoDePreparo;
-	@NotNull(message = "O endereço de destino não pode ser nulo")
-	@NotEmpty(message = "O endereço de destino não pode ser vazio")
-	@Length(min = 10, max = 500, message = "O endereço de destino deve ter no mínimo 10 e no máximo 500 caracteres")
-	@Column(nullable = false, length = 500)
+	@Column(nullable = true)
 	private String enderecoDestino;
+	@Column(nullable = true)
+	private LocalDate dataParaEntrega;
+	@Column(nullable = true)
+	private Long voucher;
+	@NotNull(message = "O status não pode ser nulo")
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	private CompraStatus status;
 
 	public Compra() {
 	}
@@ -68,6 +69,30 @@ public class Compra implements Serializable {
 
 	public void setEnderecoDestino(String enderecoDestino) {
 		this.enderecoDestino = enderecoDestino;
+	}
+
+	public LocalDate getDataParaEntrega() {
+		return dataParaEntrega;
+	}
+
+	public void setDataParaEntrega(LocalDate dataParaEntrega) {
+		this.dataParaEntrega = dataParaEntrega;
+	}
+
+	public Long getVoucher() {
+		return voucher;
+	}
+
+	public void setVoucher(Long voucher) {
+		this.voucher = voucher;
+	}
+
+	public CompraStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(CompraStatus status) {
+		this.status = status;
 	}
 
 	@Override

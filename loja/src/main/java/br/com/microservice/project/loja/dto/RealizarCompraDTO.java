@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -15,10 +16,13 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(value = Include.NON_NULL)
 @Validated
-public class CompraDTO implements Serializable {
+public class RealizarCompraDTO implements Serializable {
 
 	private static final long serialVersionUID = -718293074332512886L;
 
+	@JsonIgnore
+	private Long compraId;
+	
 	@NotNull(message = "A lista de itens não pode ser nulo")
 	@NotEmpty(message = "A lista de itens não pode ser vazia")
 	private List<ItemDaCompraDTO> itens;
@@ -41,10 +45,18 @@ public class CompraDTO implements Serializable {
 	public void setEndereco(EnderecoDTO endereco) {
 		this.endereco = endereco;
 	}
+	
+	public Long getCompraId() {
+		return compraId;
+	}
+
+	public void setCompraId(Long compraId) {
+		this.compraId = compraId;
+	}
 
 	@Override
 	public String toString() {
-		return String.format("CompraDTO [itens=%s, endereco=%s]", itens, endereco);
+		return String.format("RealizarCompraDTO [itens=%s, endereco=%s]", itens, endereco);
 	}
 
 }

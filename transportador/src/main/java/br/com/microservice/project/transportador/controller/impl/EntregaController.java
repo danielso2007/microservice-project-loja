@@ -28,7 +28,7 @@ public class EntregaController implements IEntregaController {
 
 	@HystrixCommand(threadPoolKey = "reservaEntregaThreadPool")
 	@ResponseStatus(HttpStatus.OK)
-	@PostMapping
+	@PostMapping(produces = { Constants.APPLICATION_JSON_UTF_8, Constants.APPLICATION_XML_UTF_8 })
 	@Override
 	public @ResponseBody VoucherDTO reservaEntrega(@RequestBody EntregaDTO pedidoDTO) {
 		return entregaService.reservaEntrega(pedidoDTO);
