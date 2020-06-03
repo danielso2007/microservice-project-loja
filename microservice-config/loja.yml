@@ -84,7 +84,13 @@ info:
   app:
     name: Loja
     description: Loja de microserviço
-    version: 0.0.1-SNAPSHOT
+    version: 1.1.0
     encoding: UTF-8
     java:
       version: 11
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8001/user
+hystrix:
+  shareSecurityContext: true

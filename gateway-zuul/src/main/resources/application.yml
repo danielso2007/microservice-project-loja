@@ -1,3 +1,6 @@
+zuul:
+  sensitive-headers:
+  - Cookie, Authorization
 spring:
   application:
     name: '@project.artifactId@'

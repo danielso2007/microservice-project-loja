@@ -172,7 +172,7 @@ public class CompraService implements ICompraService {
 		InfoEntregaDTO entregaDTO = criarEntrega(infoFornecedorDTO, compraSalva, realizarCompraDTO);
 
 		LOG.info("Criar voucher...");
-		criarVoucher(compraSalva, entregaDTO);
+		compraSalva = criarVoucher(compraSalva, entregaDTO);
 
 		return compraSalva;
 	}

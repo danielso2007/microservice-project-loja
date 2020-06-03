@@ -29,6 +29,12 @@ spring:
     show_sql: '${HOW_SQL:@db.show_sql@}'
     hibernate:
       ddl-auto: '@db.ddl-auto@'
+security:
+  oauth2:
+    resource:
+      user-info-uri: '${USER_INFO_URI:@user-info-uri@}'
+hystrix:
+  shareSecurityContext: true
 feign:
   hystrix:
     enabled: false

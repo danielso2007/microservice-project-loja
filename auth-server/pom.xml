@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>br.com.microservice.project</groupId>
 		<artifactId>microservice-project</artifactId>
 		<version>1.1.0</version>
-		<relativePath>../</relativePath> <!-- lookup parent from repository -->
+		<relativePath>../</relativePath>
 	</parent>
 
-	<groupId>br.com.microservice.project.fornecedor</groupId>
-	<artifactId>fornecedor</artifactId>
-	<name>fornecedor</name>
-	<description>Microservice fornecedor</description>
+	<groupId>br.com.microservice.project.auth</groupId>
+	<artifactId>auth-server</artifactId>
+	<name>auth-server</name>
+	<description>OAuth2 Server</description>
 
 	<dependencies>
+		<!-- Log da aplicação -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
@@ -64,12 +66,6 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-		<!-- Buscar a configuração da aplicação no servidor -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-
 		<!-- Eureka -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -101,40 +97,6 @@
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 
-		<!-- ORM -->
-		<dependency>
-			<groupId>org.hibernate.validator</groupId>
-			<artifactId>hibernate-validator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.tomcat</groupId>
-					<artifactId>tomcat-jdbc</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<scope>compile</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
-		</dependency>
-
 		<!--Security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -155,21 +117,7 @@
 			<groupId>org.jboss.threads</groupId>
 			<artifactId>jboss-threads</artifactId>
 		</dependency>
-
-		<!-- Testes -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 	</dependencies>
-
 
 	<dependencyManagement>
 		<dependencies>
@@ -190,11 +138,6 @@
 				<debug.properties>false</debug.properties>
 				<trace.properties>false</trace.properties>
 				<spring.profiles.active>test</spring.profiles.active>
-				<initialization-mode>always</initialization-mode>
-				<db.name>fornecedor-${spring.profiles.active}</db.name>
-				<db.show_sql>true</db.show_sql>
-				<db.ddl-auto>none</db.ddl-auto>
-				<skip-tests>false</skip-tests>
 			</properties>
 		</profile>
 		<profile>
@@ -204,11 +147,6 @@
 			</activation>
 			<properties>
 				<spring.profiles.active>dev</spring.profiles.active>
-				<initialization-mode>always</initialization-mode>
-				<db.name>fornecedor-${spring.profiles.active}</db.name>
-				<db.show_sql>true</db.show_sql>
-				<db.ddl-auto>none</db.ddl-auto>
-				<skip-tests>true</skip-tests>
 			</properties>
 		</profile>
 		<profile>
@@ -217,12 +155,9 @@
 				<debug.properties>false</debug.properties>
 				<trace.properties>false</trace.properties>
 				<spring.profiles.active>prod</spring.profiles.active>
-				<initialization-mode>never</initialization-mode>
-				<db.name>fornecedor</db.name>
-				<db.show_sql>false</db.show_sql>
-				<db.ddl-auto>none</db.ddl-auto>
 				<skip-tests>true</skip-tests>
 			</properties>
 		</profile>
 	</profiles>
+
 </project>
