@@ -6,56 +6,386 @@
 	},
 	"item": [
 		{
-			"name": "Fornecedor por Estado",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/api/v1/info/rj",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"api",
-						"v1",
-						"info",
-						"rj"
-					]
+			"name": "Loja",
+			"item": [
+				{
+					"name": "Loja - Nova Compra",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "551df6f4-ec24-468d-b3ee-6d72574b03bc",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"endereco\": {\n\t\t\"rua\": \"Rua Elizeth Cardoso, 1212, RJ\",\n\t\t\"numero\": 15896,\n\t\t\"estado\": \"RJ\"\n\t},\n\t\"itens\": [\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"quantidade\": 3\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"quantidade\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"quantidade\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 6,\n\t\t\t\"quantidade\": 2\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/compras",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"compras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loja - Compra ID",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "ee809fda-e63c-492a-bb19-62f776c4fbf6",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/compras/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"compras",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loja - Reprocessar compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/compras/reprocessar/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"compras",
+								"reprocessar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Loja - Cancelar compra",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/compras/cancelar/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"compras",
+								"cancelar",
+								"2"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Nova Compra",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"endereco\": {\n\t\t\"rua\": \"Rua Elizeth Cardoso, 1212, RJ\",\n\t\t\"numero\": 15896,\n\t\t\"estado\": \"RJ\"\n\t},\n\t\"itens\": [\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"quantidade\": 3\n\t\t},\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"quantidade\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"quantidade\": 1\n\t\t},\n\t\t{\n\t\t\t\"id\": 6,\n\t\t\t\"quantidade\": 2\n\t\t}\n\t]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Fornecedor",
+			"item": [
+				{
+					"name": "Fornecedor por Estado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/info/rj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"info",
+								"rj"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/compras",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"compras"
-					]
+				{
+					"name": "Fornecedor - Protudos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/produto/rj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"produto",
+								"rj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fornecedor - Pedido por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v1/pedido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"pedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fornecedor - Realizar Pedido",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "ee809fda-e63c-492a-bb19-62f776c4fbf6",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"id\":1,\n\t\t\"quantidade\": 9\n\t},\n\t\t{\n\t\t\"id\":3,\n\t\t\"quantidade\": 2\n\t},\n\t\t{\n\t\t\"id\":5,\n\t\t\"quantidade\": 1\n\t},\n\t\t{\n\t\t\"id\":8,\n\t\t\"quantidade\": 5\n\t},\n\t\t{\n\t\t\"id\":10,\n\t\t\"quantidade\": 10\n\t},\n\t\t{\n\t\t\"id\":12,\n\t\t\"quantidade\": 4\n\t},\n\t\t{\n\t\t\"id\":13,\n\t\t\"quantidade\": 2\n\t}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/pedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"pedido"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Transportadora",
+			"item": [
+				{
+					"name": "Transportadora - Criar Entregas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pedidoId\": 1,\n\t\"dataParaEntrega\": \"2020-06-02\",\n\t\"enderecoOrigem\": \"Avenida China, 102, Cabralzinho, Macapá - AP\",\n\t\"enderecoDestino\":\"Avenida Lacerda, 590, Liberdade, Salvador - BA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/entregas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"entregas"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Gateway - Zuul",
+			"item": [
+				{
+					"name": "Gateway Zuul routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/actuator/routes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"actuator",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Produtos via gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/fornecedor/api/v1/produto/rj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"fornecedor",
+								"api",
+								"v1",
+								"produto",
+								"rj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gateway Realizar Pedido Fornecedor",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "ee809fda-e63c-492a-bb19-62f776c4fbf6",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"id\":1,\n\t\t\"quantidade\": 9\n\t},\n\t\t{\n\t\t\"id\":3,\n\t\t\"quantidade\": 2\n\t}\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/fornecedor/api/v1/pedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"fornecedor",
+								"api",
+								"v1",
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Eureka Serve",
@@ -98,221 +428,6 @@
 					"path": [
 						"fornecedor",
 						"default"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Protudos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/api/v1/produto/rj",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"api",
-						"v1",
-						"produto",
-						"rj"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Pedido por ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8081/api/v1/pedido/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"api",
-						"v1",
-						"pedido",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Realizar Pedido",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "[\n\t{\n\t\t\"id\":1,\n\t\t\"quantidade\": 9\n\t},\n\t\t{\n\t\t\"id\":3,\n\t\t\"quantidade\": 2\n\t},\n\t\t{\n\t\t\"id\":5,\n\t\t\"quantidade\": 1\n\t},\n\t\t{\n\t\t\"id\":8,\n\t\t\"quantidade\": 5\n\t},\n\t\t{\n\t\t\"id\":10,\n\t\t\"quantidade\": 10\n\t},\n\t\t{\n\t\t\"id\":12,\n\t\t\"quantidade\": 4\n\t},\n\t\t{\n\t\t\"id\":13,\n\t\t\"quantidade\": 2\n\t}\n]",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8081/api/v1/pedido",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"api",
-						"v1",
-						"pedido"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Criar Entregas",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"pedidoId\": 1,\n\t\"dataParaEntrega\": \"2020-06-02\",\n\t\"enderecoOrigem\": \"Avenida China, 102, Cabralzinho, Macapá - AP\",\n\t\"enderecoDestino\":\"Avenida Lacerda, 590, Liberdade, Salvador - BA\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8082/api/v1/entregas",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"api",
-						"v1",
-						"entregas"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Compra ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/compras/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"compras",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Reprocessar compra",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/compras/reprocessar/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"compras",
-						"reprocessar",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Cancelar compra",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/compras/cancelar/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"compras",
-						"cancelar",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gateway Zuul routes",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/actuator/routes",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"actuator",
-						"routes"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Produtos via gateway",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/fornecedor/api/v1/produto/rj",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"fornecedor",
-						"api",
-						"v1",
-						"produto",
-						"rj"
 					]
 				}
 			},
@@ -393,7 +508,7 @@
 					"oauth2": [
 						{
 							"key": "accessToken",
-							"value": "8960b463-ca41-447f-a15f-cc6e77baf6e5",
+							"value": "ee809fda-e63c-492a-bb19-62f776c4fbf6",
 							"type": "string"
 						},
 						{
