@@ -57,7 +57,7 @@ public class ItemDaCompraDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("ItemDaCompraDTO [id=%s, quantidade=%s]", id, quantidade);
+		return String.format("ItemDaCompraDTO [id=%d, quantidade=%d]", id, quantidade);
 	}
 
 }

@@ -24,7 +24,7 @@ public class ItemDoPedidoDTO {
 
 	@Override
 	public String toString() {
-		return String.format("ItemDoPedidoDTO [id=%s, quantidade=%s]", id, quantidade);
+		return String.format("ItemDoPedidoDTO [id=%d, quantidade=%d]", id, quantidade);
 	}
 
 }

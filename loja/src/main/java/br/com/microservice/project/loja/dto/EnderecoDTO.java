@@ -57,7 +57,7 @@ public class EnderecoDTO implements Serializable {
 	}
 
 	public String enderecoCompleto() {
-		return String.format("%s, %s, %s", getRua(), getNumero(), getEstado());
+		return String.format("%s, %d, %s", getRua(), getNumero(), getEstado());
 	}
 
 	@Override
@@ -74,7 +74,7 @@ public class EnderecoDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("EnderecoDTO [rua=%s, numero=%s, estado=%s]", rua, numero, estado);
+		return String.format("EnderecoDTO [rua=%s, numero=%d, estado=%s]", rua, numero, estado);
 	}
 
 }
