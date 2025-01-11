@@ -68,7 +68,7 @@
 		<!-- Dependências -->
 		<xnio-ni.version>3.8.2.Final</xnio-ni.version>
 		<jboss-threads.version>3.1.1.Final</jboss-threads.version>
-		<hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
+		<hibernate-validator.version>6.2.0.Final</hibernate-validator.version>
 		<hikariCP.version>3.4.5</hikariCP.version>
 		<mariadbl-connector-java.version>2.6.0</mariadbl-connector-java.version>
 		<spring-boot-starter-parent.version>2.3.0.RELEASE</spring-boot-starter-parent.version>
