@@ -2,11 +2,11 @@ spring:
   profiles:
     active: prod
   datasource:
-    platform: mariadb
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/loja
     username: root
     password: root
+  sql.init.platform: mariadb
 debug: false
 trace: false
 

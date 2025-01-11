@@ -3,8 +3,8 @@ package br.com.microservice.project.loja.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -57,7 +57,7 @@ public class EnderecoDTO implements Serializable {
 	}
 
 	public String enderecoCompleto() {
-		return String.format("%s, %d, %s", getRua(), getNumero(), getEstado());
+		return "%s, %d, %s".formatted(getRua(), getNumero(), getEstado());
 	}
 
 	@Override
@@ -74,7 +74,7 @@ public class EnderecoDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("EnderecoDTO [rua=%s, numero=%d, estado=%s]", rua, numero, estado);
+		return "EnderecoDTO [rua=%s, numero=%d, estado=%s]".formatted(rua, numero, estado);
 	}
 
 }

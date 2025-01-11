@@ -3,13 +3,13 @@ package br.com.microservice.project.fornecedor.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -91,7 +91,7 @@ public class Fornecedor implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("Fornecedor [id=%s, nome=%s, estado=%s, endereco=%s]", id, nome, estado, endereco);
+		return "Fornecedor [id=%s, nome=%s, estado=%s, endereco=%s]".formatted(id, nome, estado, endereco);
 	}
 
 }

@@ -3,13 +3,13 @@ package br.com.microservice.project.transportador.entity;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -115,9 +115,9 @@ public class Entrega {
 
 	@Override
 	public String toString() {
-		return String.format(
-				"Entrega [id=%s, pedidoId=%s, dataParaBusca=%s, previsaoParaEntrega=%s, enderecoOrigem=%s, enderecoDestino=%s]",
-				id, pedidoId, dataParaBusca, previsaoParaEntrega, enderecoOrigem, enderecoDestino);
+		return 
+		"Entrega [id=%s, pedidoId=%s, dataParaBusca=%s, previsaoParaEntrega=%s, enderecoOrigem=%s, enderecoDestino=%s]".formatted(
+		id, pedidoId, dataParaBusca, previsaoParaEntrega, enderecoOrigem, enderecoDestino);
 	}
 
 }

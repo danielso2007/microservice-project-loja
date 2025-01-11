@@ -9,8 +9,6 @@ spring:
     locale: pt-BR
     time-zone: America/Sao_Paulo
   datasource:
-    initialization-mode: always
-    platform: mariadb
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/fornecedor-dev
     username: root
@@ -29,6 +27,8 @@ spring:
     show_sql: false
     hibernate:
       ddl-auto: none
+  sql.init.mode: always
+  sql.init.platform: mariadb
 eureka:
   client:
     register-with-eureka: true

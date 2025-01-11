@@ -1,6 +1,10 @@
 spring:
   application:
     name: '@project.artifactId@'
+  cloud:
+    config:
+      enabled: false
+      import: '@config-server.host@'
   profiles:
     active: "${PROJECT_PROFILE:@spring.profiles.active@}"
   jackson:

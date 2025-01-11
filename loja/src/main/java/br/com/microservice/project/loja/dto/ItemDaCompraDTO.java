@@ -3,7 +3,7 @@ package br.com.microservice.project.loja.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.validation.constraints.Min;
+import jakarta.validation.constraints.Min;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -57,7 +57,7 @@ public class ItemDaCompraDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("ItemDaCompraDTO [id=%d, quantidade=%d]", id, quantidade);
+		return "ItemDaCompraDTO [id=%d, quantidade=%d]".formatted(id, quantidade);
 	}
 
 }

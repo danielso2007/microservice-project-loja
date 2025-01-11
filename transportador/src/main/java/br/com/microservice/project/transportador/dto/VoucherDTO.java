@@ -3,7 +3,7 @@ package br.com.microservice.project.transportador.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -42,7 +42,7 @@ public class VoucherDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("VoucherDTO [numero=%s, previsaoParaEntrega=%s]", numero, previsaoParaEntrega);
+		return "VoucherDTO [numero=%s, previsaoParaEntrega=%s]".formatted(numero, previsaoParaEntrega);
 	}
 
 }

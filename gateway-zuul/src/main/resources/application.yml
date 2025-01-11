@@ -1,7 +1,11 @@
-zuul:
-  sensitive-headers:
-  - Cookie, Authorization
 spring:
+  cloud:
+    gateway:
+      routes:
+        - id: after_route
+          uri: https://example.org
+          predicates:
+            - Cookie=mycookie,mycookievalue
   application:
     name: '@project.artifactId@'
   profiles:

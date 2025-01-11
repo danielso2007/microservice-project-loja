@@ -3,8 +3,8 @@ package br.com.microservice.project.loja.dto;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -56,7 +56,7 @@ public class RealizarCompraDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("RealizarCompraDTO [itens=%s, endereco=%s]", itens, endereco);
+		return "RealizarCompraDTO [itens=%s, endereco=%s]".formatted(itens, endereco);
 	}
 
 }

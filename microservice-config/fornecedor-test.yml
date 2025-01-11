@@ -2,8 +2,6 @@ spring:
   profiles:
     active: test
   datasource:
-    initialization-mode: always
-    platform: mariadb
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/fornecedor-test
     username: root
@@ -15,5 +13,7 @@ spring:
     show_sql: fasle
     hibernate:
       ddl-auto: none
+  sql.init.mode: always
+  sql.init.platform: mariadb
 debug: false
 trace: false

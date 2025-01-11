@@ -1,6 +1,6 @@
 package br.com.microservice.project.loja.service;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import br.com.microservice.project.loja.dto.RealizarCompraDTO;
 import br.com.microservice.project.loja.entity.Compra;

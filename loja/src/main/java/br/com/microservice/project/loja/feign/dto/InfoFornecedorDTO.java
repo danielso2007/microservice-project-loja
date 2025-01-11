@@ -27,7 +27,7 @@ public class InfoFornecedorDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("InfoFornecedorDTO [endereco=%s]", endereco);
+		return "InfoFornecedorDTO [endereco=%s]".formatted(endereco);
 	}
 
 }

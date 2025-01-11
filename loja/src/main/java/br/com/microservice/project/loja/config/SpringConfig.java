@@ -32,7 +32,7 @@ public class SpringConfig implements WebMvcConfigurer {
 				}
 				
 				OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) authentication.getDetails();
-				template.header("Authorization", String.format("Bearer %s", details.getTokenValue()));
+				template.header("Authorization", "Bearer %s".formatted(details.getTokenValue()));
 			}
 
 		};

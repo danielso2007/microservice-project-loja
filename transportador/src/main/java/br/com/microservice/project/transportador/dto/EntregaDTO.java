@@ -3,8 +3,8 @@ package br.com.microservice.project.transportador.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -68,8 +68,8 @@ public class EntregaDTO implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("EntregaDTO [pedidoId=%s, dataParaEntrega=%s, enderecoOrigem=%s, enderecoDestino=%s]",
-				pedidoId, dataParaEntrega, enderecoOrigem, enderecoDestino);
+		return "EntregaDTO [pedidoId=%s, dataParaEntrega=%s, enderecoOrigem=%s, enderecoDestino=%s]".formatted(
+		pedidoId, dataParaEntrega, enderecoOrigem, enderecoDestino);
 	}
 
 }
